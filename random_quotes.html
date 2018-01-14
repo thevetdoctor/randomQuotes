@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Quotes</title>
+	<style>
+		* {
+			padding: 5px;
+			margin: 5px;
+			font-family:  georgia monospace;
+			font-style: oblique;
+			font-size: 18px;
+		}
+		
+		body {
+			background-color: palegreen;
+		}
+
+		div {
+			background-color: #038177;
+			border-radius: 10px;
+		}
+
+		input, p {
+			border-radius: 10px;
+		}
+		.main_content {
+			font-weight: bold;;
+		}
+	</style>
+</head>
+<body>
+<div class="container-fluid">
+	<div>
+		<input id="newQuote" type="button" name="newQuote" value="newQuote">
+	</div>
+	<div class="row">
+		<div class="top">
+			<div class="top_content">"To begin this tutorial, we'd like you to make a local copy of the number-guessing-game-start.html file (see it live here). Open it in both your text editor and your web browser. At the moment you'll see a simple heading, paragraph of instructions and form for entering a guess, but the form won't currently do anything."</div>
+		</div>
+		<div class="main">
+			<div class="main_content"><p class="main_content">The above sentence has been split into 7 parts and displayed randomly when the button is clicked!</p></div>
+		</div>
+		<div class="footer">
+			<div class="footer_content">
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+
+	function changeQuote(){if(quoteList.length>0){var e=Math.floor(Math.random()*quoteList.length+0),t=quoteList[e];randomListArray.push(e+1),console.log(t),console.log(randomListArray);var o=document.createElement("p");o.textContent=t,o.style.backgroundColor=colorList[e],content.appendChild(o),quoteList.splice(e,1),colorList.splice(e,1)}}var quoteList=["1: To begin this tutorial","2: we'd like you to make a local copy of the number-guessing-game-start.html file (see it live here).","3: Open it in both your text editor","4: and your web browser.","5: At the moment you'll see a simple heading","6: paragraph of instructions and form for entering a guess","7: but the form won't currently do anything."],colorList=["palegreen","purple","orange","silver","blue","yellow","red"],content=document.querySelector(".footer_content");content.textContent="";var randomListArray=[],newQuote=document.getElementById("newQuote");newQuote.addEventListener("click",changeQuote);
+
+	// var quoteList = ["1: To begin this tutorial", "2: we'd like you to make a local copy of the number-guessing-game-start.html file (see it live here).", "3: Open it in both your text editor", "4: and your web browser.", "5: At the moment you'll see a simple heading", "6: paragraph of instructions and form for entering a guess", "7: but the form won't currently do anything."];
+
+	// var colorList= ["palegreen", "purple", "orange", "silver", "blue", "yellow", "red"];
+
+	// var content = document.querySelector('.footer_content');
+
+	// content.textContent = '';
+
+	// var randomListArray =[];
+
+	// function changeQuote(){
+	// 	if(quoteList.length > 0){
+
+	// 	var randomNumber = Math.floor((Math.random() * quoteList.length) + 0 );
+	// 	var quote = quoteList[randomNumber];
+
+	// 	randomListArray.push(randomNumber + 1);
+
+	// 	console.log(quote);
+	// 	console.log(randomListArray);
+		
+	// 	var quotePara = document.createElement('p');
+	// 	quotePara.textContent = quote;
+	// 	quotePara.style.backgroundColor = colorList[randomNumber];
+	// 	content.appendChild(quotePara);
+	
+	// 	quoteList.splice(randomNumber, 1);
+	// 	colorList.splice(randomNumber, 1);
+		
+	// 	} else {
+	// 		return;
+	// 	}
+
+	// }
+
+	// var newQuote = document.getElementById('newQuote');
+
+	// newQuote.addEventListener('click', changeQuote);
+
+</script>
+</body>
+</html>
