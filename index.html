@@ -34,6 +34,8 @@
 		<input id="newQuote" type="button" name="newQuote" value="newQuote">
 	</div>
 	<div class="row">
+					<h3 id="result"></h3>
+
 		<div class="top">
 			<div class="top_content">"To begin this tutorial, we'd like you to make a local copy of the number-guessing-game-start.html file (see it live here). Open it in both your text editor and your web browser. At the moment you'll see a simple heading, paragraph of instructions and form for entering a guess, but the form won't currently do anything."</div>
 		</div>
@@ -89,6 +91,20 @@
 	// var newQuote = document.getElementById('newQuote');
 
 	// newQuote.addEventListener('click', changeQuote);
+	
+	var clickCounter = function () {
+   			if(typeof(Storage) !== "undefined") {
+      	      if (localStorage.clickcount) {
+          		 localStorage.clickcount = Number(localStorage.clickcount)+1;
+      		 } else {
+           		 localStorage.clickcount = 1;
+      		 }
+
+       	document.getElementById("result").innerHTML = "This page has been viewed " + localStorage.clickcount + " time(s).";
+  		 } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+   }
+}();
 
 </script>
 </body>
